@@ -1,0 +1,56 @@
+# WHATIF Session
+
+**Branch:** main
+**Model:** gpt-5.2
+**Steps:** 2
+**Time:** 2026-02-16T22:24:36.313Z
+
+## Step 1
+
+### Prompt
+
+add hello world in big big red serif font
+
+### AI Response
+
+{
+  "message": "Replaced the placeholder heading with “Hello World” styled in a very large red serif font.",
+  "edits": [
+    {
+      "path": "index.html",
+      "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n  <title>loud-mole</title>\n</head>\n<body style=\"margin:0;display:flex;align-items:center;justify-content:center;height:100vh;font-family:system-ui,sans-serif;background:#fafafa;\">\n  <h1 style=\"margin:0;font-size:6rem;line-height:1;color:#d00000;font-family:Georgia,'Times New Roman',Times,serif;\">Hello World</h1>\n</body>\n</html>\n"
+    }
+  ]
+}
+
+---
+
+## Step 2
+
+### Prompt
+
+add noisy gradient background in sunset tones
+make it cinematic
+
+### AI Response
+
+{
+  "message": "Added a cinematic sunset gradient background with a subtle noise overlay and vignette, moved inline body styles into CSS, and kept the centered headline styling consistent.",
+  "edits": [
+    {
+      "path": "index.html",
+      "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n  <title>loud-mole</title>\n  <link rel=\"stylesheet\" href=\"styles.css\" />\n</head>\n<body>\n  <main class=\"stage\" aria-label=\"Cinematic sunset background\">\n    <h1>Hello World</h1>\n  </main>\n</body>\n</html>\n"
+    },
+    {
+      "path": "styles.css",
+      "content": "/* Cinematic sunset gradient + noise */\n\n:root {\n  --sun-1: #ffb25b;\n  --sun-2: #ff6a4a;\n  --sun-3: #d63b78;\n  --sun-4: #3a1b5b;\n  --sun-5: #0b1533;\n}\n\n* { box-sizing: border-box; }\n\nhtml,\nbody {\n  height: 100%;\n}\n\nbody {\n  margin: 0;\n  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;\n  background: #070a12;\n  overflow: hidden;\n}\n\n.stage {\n  position: relative;\n  height: 100vh;\n  width: 100vw;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 6vmin;\n  color: #fff;\n  background:\n    radial-gradient(1200px 900px at 20% 15%, rgba(255, 200, 120, 0.95) 0%, rgba(255, 200, 120, 0.0) 55%),\n    radial-gradient(900px 700px at 85% 25%, rgba(255, 110, 85, 0.75) 0%, rgba(255, 110, 85, 0.0) 60%),\n    radial-gradient(800px 900px at 55% 0%, rgba(255, 90, 140, 0.55) 0%, rgba(255, 90, 140, 0.0) 55%),\n    linear-gradient(180deg, var(--sun-1) 0%, var(--sun-2) 22%, var(--sun-3) 48%, var(--sun-4) 74%, var(--sun-5) 100%);\n}\n\n/* Subtle film-like noise overlay */\n.stage::before {\n  content: \"\";\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n  opacity: 0.14;\n  mix-blend-mode: overlay;\n  background-image:\n    url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.85'/%3E%3C/svg%3E\");\n  background-size: 220px 220px;\n  transform: translateZ(0);\n}\n\n/* Vignette + cinematic contrast */\n.stage::after {\n  content: \"\";\n  position: absolute;\n  inset: -2px;\n  pointer-events: none;\n  background:\n    radial-gradient(1200px 800px at 50% 40%, rgba(0, 0, 0, 0.0) 40%, rgba(0, 0, 0, 0.55) 100%),\n    linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.0) 45%, rgba(0, 0, 0, 0.35));\n  mix-blend-mode: multiply;\n}\n\nh1 {\n  position: relative;\n  z-index: 1;\n  margin: 0;\n  font-size: clamp(3rem, 10vw, 6rem);\n  line-height: 1;\n  font-family: Georgia, 'Times New Roman', Times, serif;\n  color: #ffd7b6;\n  letter-spacing: 0.02em;\n  text-shadow:\n    0 2px 16px rgba(0, 0, 0, 0.45),\n    0 0 60px rgba(255, 120, 80, 0.25);\n}\n"
+    }
+  ]
+}
+
+---
+
+## Files Modified
+
+- `index.html`
+- `styles.css`
